@@ -12,7 +12,7 @@ import org.junit.Test;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
-import static by.mrj.util.CryptoUtil.doubleSha256;
+import static by.mrj.crypto.util.CryptoUtils.doubleSha256;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MerkleTreeTest {

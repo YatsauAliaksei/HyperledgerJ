@@ -1,7 +1,7 @@
 package by.mrj.structure;
 
+import by.mrj.crypto.util.CryptoUtils;
 import by.mrj.domain.trx.Transaction;
-import by.mrj.util.CryptoUtil;
 import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class MerkleTree {
     }
 
     private Node createParent(Node odd, Node even) {
-        String combinedHash = CryptoUtil.doubleSha256(odd.hash + even.hash);
+        String combinedHash = CryptoUtils.doubleSha256(odd.hash + even.hash);
 
         Node parent = Node.of(combinedHash);
         odd.parent = parent;

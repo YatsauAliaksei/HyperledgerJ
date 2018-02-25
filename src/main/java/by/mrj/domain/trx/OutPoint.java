@@ -1,12 +1,13 @@
 package by.mrj.domain.trx;
 
-import by.mrj.domain.Hashable;
+import by.mrj.messaging.network.domain.Hashable;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
-import static by.mrj.util.CryptoUtil.doubleSha256;
+import static by.mrj.crypto.util.CryptoUtils.doubleSha256;
+
 
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @Getter

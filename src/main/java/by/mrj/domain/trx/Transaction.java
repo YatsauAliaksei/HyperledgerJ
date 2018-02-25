@@ -1,7 +1,7 @@
 package by.mrj.domain.trx;
 
-import by.mrj.domain.Hashable;
-import by.mrj.util.CryptoUtil;
+import by.mrj.crypto.util.CryptoUtils;
+import by.mrj.messaging.network.domain.Hashable;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -30,6 +30,6 @@ public class Transaction implements Hashable {
                 .reduce(String::concat)
                 .orElseThrow(IllegalStateException::new);
 
-        return CryptoUtil.doubleSha256(version + inCount + txInsHash + outCount + txOutsHash);
+        return CryptoUtils.doubleSha256(version + inCount + txInsHash + outCount + txOutsHash);
     }
 }

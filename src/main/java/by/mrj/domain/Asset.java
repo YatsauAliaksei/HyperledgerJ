@@ -1,7 +1,8 @@
 package by.mrj.domain;
 
 
-import by.mrj.util.CryptoUtil;
+import by.mrj.crypto.util.CryptoUtils;
+import by.mrj.messaging.network.domain.Hashable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -20,6 +21,6 @@ public abstract class Asset implements Hashable, Serializable {
 
     @Override
     public String hash() {
-        return CryptoUtil.doubleSha256("" + amount);
+        return CryptoUtils.doubleSha256("" + amount);
     }
 }

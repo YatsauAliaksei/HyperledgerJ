@@ -5,7 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-import static by.mrj.util.CryptoUtil.doubleSha256;
+import static by.mrj.crypto.util.CryptoUtils.doubleSha256;
+
 
 @Getter
 @EqualsAndHashCode(callSuper = true)

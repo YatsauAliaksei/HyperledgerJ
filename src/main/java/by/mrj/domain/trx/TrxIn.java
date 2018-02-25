@@ -1,12 +1,13 @@
 package by.mrj.domain.trx;
 
-import by.mrj.domain.Hashable;
+import by.mrj.messaging.network.domain.Hashable;
 import lombok.Builder;
 import lombok.Getter;
 
 import java.io.Serializable;
 
-import static by.mrj.util.CryptoUtil.doubleSha256;
+import static by.mrj.crypto.util.CryptoUtils.doubleSha256;
+
 
 @Getter
 @Builder

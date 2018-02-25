@@ -1,7 +1,8 @@
 package by.mrj.domain;
 
+import by.mrj.crypto.util.CryptoUtils;
 import by.mrj.domain.trx.Transaction;
-import by.mrj.util.CryptoUtil;
+import by.mrj.messaging.network.domain.Hashable;
 import lombok.Builder;
 import lombok.ToString;
 import lombok.Value;
@@ -23,6 +24,6 @@ public class Block extends BlockHeader implements Hashable, Serializable {
 
     @Override
     public String hash() {
-        return CryptoUtil.doubleSha256(getVersion() + getPreviousBlockHash() + getMerkleRoot() + getTimestamp());
+        return CryptoUtils.doubleSha256(getVersion() + getPreviousBlockHash() + getMerkleRoot() + getTimestamp());
     }
 }
