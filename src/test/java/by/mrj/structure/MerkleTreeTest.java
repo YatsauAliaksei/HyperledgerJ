@@ -25,7 +25,7 @@ public class MerkleTreeTest {
                 createTrx(345),
                 createTrx(456)));
 
-        MerkleTree merkleTree = new MerkleTree(trxs);
+        var merkleTree = new MerkleTree(trxs);
         List<String> proofHashes = merkleTree.proof(createTrx(234).hash());
         assertThat(proofHashes).containsExactly(
                 createTrx(123).hash(),
