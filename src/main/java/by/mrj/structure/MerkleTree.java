@@ -2,13 +2,9 @@ package by.mrj.structure;
 
 import by.mrj.crypto.util.CryptoUtils;
 import by.mrj.domain.trx.Transaction;
+import lombok.RequiredArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
@@ -95,18 +91,12 @@ public class MerkleTree {
         return root.hash;
     }
 
+    @RequiredArgsConstructor(staticName = "of")
     private static class Node {
         Node parent;
         Node left;
         Node right;
         final String hash;
-
-        @java.beans.ConstructorProperties({"hash"})
-        private Node(String hash) {
-            this.hash = hash;
-        }
-
-        public static Node of(String hash) {return new Node(hash);}
 
         String hash() {
             return hash;
